@@ -15,14 +15,22 @@ class CacheObj {
   List<int>? headers;
 
   CacheObj._(
-      this.key, this.subKey, this.content, this.statusCode, this.headers);
+    this.key,
+    this.subKey,
+    this.content,
+    this.statusCode,
+    this.headers,
+  );
 
-  factory CacheObj(String key, List<int> content,
-      {String? subKey = "",
-      Duration? maxAge,
-      Duration? maxStale,
-      int? statusCode = 200,
-      List<int>? headers}) {
+  factory CacheObj(
+    String key,
+    List<int> content, {
+    String? subKey = "",
+    Duration? maxAge,
+    Duration? maxStale,
+    int? statusCode = 200,
+    List<int>? headers,
+  }) {
     return CacheObj._(key, subKey, content, statusCode, headers)
       ..maxAge = maxAge
       ..maxStale = maxStale;

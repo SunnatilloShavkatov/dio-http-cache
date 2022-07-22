@@ -33,7 +33,10 @@ class DioCacheManager {
   get interceptor {
     if (null == _interceptor) {
       _interceptor = InterceptorsWrapper(
-          onRequest: _onRequest, onResponse: _onResponse, onError: _onError);
+        onRequest: _onRequest,
+        onResponse: _onResponse,
+        onError: _onError,
+      );
     }
     return _interceptor;
   }

@@ -20,17 +20,18 @@ class CacheConfig {
   final Decrypt? decrypt;
   final ICacheStore? diskStore;
 
-  CacheConfig(
-      {this.defaultMaxAge = const Duration(days: 7),
-      this.defaultMaxStale,
-      this.defaultRequestMethod = "POST",
-      this.databasePath,
-      this.databaseName = "DioCache",
-      this.baseUrl,
-      this.skipDiskCache = false,
-      this.skipMemoryCache = false,
-      this.maxMemoryCacheCount = 100,
-      this.encrypt,
-      this.decrypt,
-      this.diskStore});
+  CacheConfig({
+    this.defaultMaxAge = const Duration(days: 7),
+    this.defaultMaxStale,
+    this.defaultRequestMethod = "POST",
+    this.databasePath,
+    this.databaseName = "DioCache",
+    this.baseUrl,
+    this.skipDiskCache = false,
+    this.skipMemoryCache = false,
+    this.maxMemoryCacheCount = 100,
+    this.encrypt,
+    this.decrypt,
+    this.diskStore,
+  });
 }

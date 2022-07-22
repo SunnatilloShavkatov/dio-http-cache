@@ -3,18 +3,19 @@ import 'package:dio_http_cache/src/manager_dio.dart';
 
 /// try to get maxAge and maxStale from response headers.
 /// local settings will always overview the value get from service.
-Options buildServiceCacheOptions(
-        {Options? options,
-        Duration? maxStale,
-        String? primaryKey,
-        String? subKey,
-        bool? forceRefresh}) =>
+Options buildServiceCacheOptions({
+  Options? options,
+  Duration? maxStale,
+  String? primaryKey,
+  String? subKey,
+  bool? forceRefresh,
+}) =>
     buildConfigurableCacheOptions(
         options: options,
         maxStale: maxStale,
         primaryKey: primaryKey,
         subKey: subKey,
-        forceRefresh: forceRefresh);
+        forceRefresh: forceRefresh,);
 
 /// build a normal cache options
 Options buildCacheOptions(Duration maxAge,
@@ -22,14 +23,14 @@ Options buildCacheOptions(Duration maxAge,
         String? primaryKey,
         String? subKey,
         Options? options,
-        bool? forceRefresh}) =>
+        bool? forceRefresh,}) =>
     buildConfigurableCacheOptions(
         maxAge: maxAge,
         options: options,
         primaryKey: primaryKey,
         subKey: subKey,
         maxStale: maxStale,
-        forceRefresh: forceRefresh);
+        forceRefresh: forceRefresh,);
 
 /// if null==maxAge, will try to get maxAge and maxStale from response headers.
 /// local settings will always overview the value get from service.
@@ -39,7 +40,7 @@ Options buildConfigurableCacheOptions(
     Duration? maxStale,
     String? primaryKey,
     String? subKey,
-    bool? forceRefresh}) {
+    bool? forceRefresh,}) {
   if (null == options) {
     options = Options();
     options.extra = {};
